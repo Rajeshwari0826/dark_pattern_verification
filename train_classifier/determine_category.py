@@ -1,4 +1,5 @@
 import pandas as pd
+<<<<<<< HEAD
 from joblib import dump
 from sklearn import metrics
 from sklearn.feature_extraction.text import (CountVectorizer, TfidfTransformer,
@@ -9,6 +10,19 @@ from sklearn.naive_bayes import MultinomialNB
 selected_classification = "Pattern Category"
 
 df = pd.read_csv("C:\\Users\\RAJESHWARI\\OneDrive\\Desktop\\work\\dark pattrens\\dark_pattern_verification_GoFI\\dark_pattern_verification_GoFI\\train_classifier\\dark_patterns.csv")
+=======
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn import metrics
+from joblib import dump
+
+selected_classification = "Pattern Category"
+
+df = pd.read_csv('dark_patterns.csv')
+>>>>>>> aec5b5447558126114002f567057c8a75dde4b5e
 
 df = df[pd.notnull(df["Pattern String"])]
 col = ["Pattern String", selected_classification]
@@ -40,5 +54,10 @@ y_pred = clf.predict(count_vect.transform(X_test))
 
 print("Accuracy:", metrics.accuracy_score(y_pred, y_test))
 
+<<<<<<< HEAD
 dump(clf, 'categories_classifier.joblib')
 dump(count_vect, 'categories_vectorizer.joblib')
+=======
+dump(clf, 'category_classifier.joblib')
+dump(count_vect, 'category_vectorizer.joblib')
+>>>>>>> aec5b5447558126114002f567057c8a75dde4b5e

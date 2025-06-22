@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import matplotlib.pyplot as plt
 import pandas as pd
 from joblib import dump
@@ -11,6 +12,21 @@ from sklearn.naive_bayes import BernoulliNB
 
 df1 = pd.read_csv("C:\\Users\\RAJESHWARI\\OneDrive\\Desktop\\work\\dark pattrens\\dark_pattern_verification_GoFI\\dark_pattern_verification_GoFI\\train_classifier\\normie.csv")
 df2 = pd.read_csv("C:\\Users\\RAJESHWARI\\OneDrive\\Desktop\\work\\dark pattrens\\dark_pattern_verification_GoFI\\dark_pattern_verification_GoFI\\train_classifier\\dark_patterns.csv")
+=======
+import pandas as pd 
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.naive_bayes import BernoulliNB
+from sklearn import metrics
+from joblib import dump
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+# import seaborn as sns
+
+df1 = pd.read_csv('normie.csv')
+df2 = pd.read_csv('dark_patterns.csv')
+>>>>>>> aec5b5447558126114002f567057c8a75dde4b5e
 
 df1 = df1[pd.notnull(df1["Pattern String"])]
 df1 = df1[df1["classification"] == 0]
@@ -45,5 +61,10 @@ print("Accuracy: ", metrics.accuracy_score(y_pred, y_test))
 # plt.xlabel('Predicted')
 # plt.show()
 
+<<<<<<< HEAD
 dump(clf, 'presences_classifer.joblib')
 dump(count_vect, 'presences_vectorizer.joblib')
+=======
+dump(clf, 'presence_classifer.joblib')
+dump(count_vect, 'presence_vectorizer.joblib')
+>>>>>>> aec5b5447558126114002f567057c8a75dde4b5e

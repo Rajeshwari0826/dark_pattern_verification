@@ -11,8 +11,13 @@ from sklearn import svm, tree
 from sklearn.linear_model import SGDClassifier, LogisticRegression
 
 
+<<<<<<< HEAD
 df1 = pd.read_csv("C:\\Users\\RAJESHWARI\\OneDrive\\Desktop\\work\\dark pattrens\\dark_pattern_verification_GoFI\\dark_pattern_verification_GoFI\\train_classifier\\normie.csv")
 df2 = pd.read_csv("C:\\Users\\RAJESHWARI\\OneDrive\\Desktop\\work\\dark pattrens\\dark_pattern_verification_GoFI\\dark_pattern_verification_GoFI\\train_classifier\\dark_patterns.csv")
+=======
+df1 = pd.read_csv('normie.csv')
+df2 = pd.read_csv('dark_patterns.csv')
+>>>>>>> aec5b5447558126114002f567057c8a75dde4b5e
 
 df1 = df1[pd.notnull(df1["Pattern String"])]
 df1 = df1[df1["classification"] == 0]
