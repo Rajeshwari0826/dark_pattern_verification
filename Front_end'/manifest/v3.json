@@ -1,0 +1,36 @@
+{
+  "name": "__MSG_appName__",
+  "short_name": "__MSG_appShortName__",
+  "description": "__MSG_appDescription__",
+  "homepage_url": "https://ariadne.dantis.me",
+  "version": "__PKG_version__",
+  "version_name": "__PKG_versionName__",
+  "manifest_version": 3,
+  "default_locale": "en",
+  "minimum_chrome_version": "88",
+  "permissions": [
+    "tabs"
+  ],
+  "icons": {
+    "128": "assets/img/Button@8x.png"
+  },
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/img/Button.png",
+      "24": "assets/img/Button@1.5x.png",
+      "32": "assets/img/Button@2x.png"
+    },
+    "default_title": "__MSG_appName__",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["./content.js"],
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_idle"
+    }
+  ]
+}
